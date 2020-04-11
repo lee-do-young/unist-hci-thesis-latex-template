@@ -3,8 +3,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt,a4paper,onecolumn,oneside]{report}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+
 
 %\RequirePackage{mathptmx}
 \RequirePackage[top=3cm, bottom=1in, left=1in, right=1in]{geometry}
@@ -30,8 +29,22 @@
 \usepackage{tocloft}
 \usepackage{pdfpages}
 
+\usepackage{multirow} %for table
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+
 \renewcommand\cftsecafterpnum{\vskip15pt}
 \renewcommand\cftsubsecafterpnum{\vskip15pt}
+\renewcommand\cftsubsubsecafterpnum{\vskip15pt}
+\renewcommand\cftparaafterpnum{\vskip15pt}
 \renewcommand\cftfigafterpnum{\vskip15pt}
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
