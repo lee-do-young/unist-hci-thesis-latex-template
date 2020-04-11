@@ -41,12 +41,14 @@
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
-\renewcommand\cftsecafterpnum{\vskip15pt}
-\renewcommand\cftsubsecafterpnum{\vskip15pt}
-\renewcommand\cftsubsubsecafterpnum{\vskip15pt}
-\renewcommand\cftparaafterpnum{\vskip15pt}
-\renewcommand\cftfigafterpnum{\vskip15pt}
-\renewcommand\cfttabafterpnum{\vskip15pt}
+\newcommand\Spacing{3pt}
+\renewcommand\cftsecafterpnum{\vskip \Spacing}
+\renewcommand\cftsubsecafterpnum{\vskip \Spacing}
+\renewcommand\cftsubsubsecafterpnum{\vskip \Spacing}
+\renewcommand\cftparaafterpnum{\vskip \Spacing}
+
+\renewcommand\cftfigafterpnum{\vskip \Spacing}
+\renewcommand\cfttabafterpnum{\vskip \Spacing}
 
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
