@@ -3,11 +3,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[11pt,a4paper,onecolumn,oneside]{report}
 
+\usepackage{multirow} %for table
+% \usepackage{microtype}  % Improved Tracking and Kerning
+% \usepackage{ccicons}   % Cite your images correctly!
+\usepackage{booktabs}
+\usepackage{siunitx}
+\usepackage{caption}
 
-
-%\RequirePackage{mathptmx}
-\RequirePackage[top=3cm, bottom=1in, left=1in, right=1in]{geometry}
-\linespread{1.3}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
 \usepackage{titlesec}
 \usepackage{amsmath}
@@ -25,41 +29,48 @@
 \usepackage{cases}
 \usepackage{url}
 \usepackage{cite}
-\usepackage{fancyhdr}
 \usepackage{tocloft}
 \usepackage{pdfpages}
 
-\usepackage{multirow} %for table
-\usepackage{booktabs}
-\usepackage{siunitx}
-\usepackage{caption}
+\usepackage{setspace}
 
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-
+% Section depth
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 
+% Margins
+\RequirePackage[top=3cm, bottom=1in, left=1in, right=1in]{geometry}
+
+% Line space
+\linespread{1.36} % 1.5(linespace)/1.1(font size)
+
+% Spacing after sec, subsec, subsubsec, para, fig, tab
 \newcommand\Spacing{3pt}
 \renewcommand\cftsecafterpnum{\vskip \Spacing}
 \renewcommand\cftsubsecafterpnum{\vskip \Spacing}
 \renewcommand\cftsubsubsecafterpnum{\vskip \Spacing}
 \renewcommand\cftparaafterpnum{\vskip \Spacing}
-
 \renewcommand\cftfigafterpnum{\vskip \Spacing}
 \renewcommand\cfttabafterpnum{\vskip \Spacing}
 
+% Indentation and line skip after paragraphs
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{1.5em}
+
+% Set number style
 \renewcommand{\thesection}{\Roman{section}}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\thefigure}{\arabic{figure}}
+
+% Set section names
 \renewcommand{\contentsname}{\hfill\bfseries\Large Contents\hfill}
 \renewcommand{\listfigurename}{\hfill\bfseries\Large List of Figures\hfill}
 \renewcommand{\listtablename}{\hfill\bfseries\Large List of Tables\hfill}
-\renewcommand{\thefigure}{\arabic{figure}}
-\newcommand{\qed}{\hfill\blacksquare}
 \renewcommand{\bibname}{\hfill\bfseries\Large References \hfill\hfill}
 \renewcommand{\abstractname}{\bfseries\Large Abstract \hfill\hfill}
+\renewcommand{\cftaftertoctitle}{\hfill}
 
+% Set theorem related
 \newcounter{lemma}
 \newcounter{proposition}
 \newcounter{theorem}
@@ -68,22 +79,13 @@
 \newtheorem{theorem}{\bf Theorem}
 \newtheorem{proof}{\bf Proof}
 
-%\input{mymath_mod.tex}
-
-
-\newcommand{\HIGH}[1]{{\textcolor{blue}{#1}}}
-%\renewcommand{\baselinestretch}{1.5}
-
+% Declare math operator style
 \DeclareMathOperator*{\argmax}{arg\,max}
 
-\fancyhf{}
-\renewcommand{\headrulewidth}{0pt}
-\cfoot{\thepage}
-\pagestyle{fancy}
-%\pagenumbering{gobble}
+% Set qed style (Quod Erat Demonstrandum)
+\newcommand{\qed}{\hfill\blacksquare}
 
 \begin{document}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%    Do not touch the above 70 lines     %%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,7 +96,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%
 
 % Variables
-\input{texts/0. TODO names}
+\input{texts/0-1. Names}
 
 \begin{center}
 
@@ -102,16 +104,20 @@
 
 \vspace{3cm}
 \huge \Title
+% Great Work That None Can Do Except Me
 
 \vfill
 
 \LARGE \Name
+% Gil Dong Hong
 
 \vspace{2cm}
 
 \LARGE \Department
+% Department of Electrical and Computer Engineering
 
 \LARGE \Track
+% (Computer Science and Engineering)
 
 \vspace{2cm}
 
@@ -120,6 +126,7 @@
 \vspace{2cm}
 
 \LARGE \Year
+% 2018
 
 \end{center}
 \thispagestyle{empty}
@@ -134,12 +141,10 @@
 \hbox{ }
 
 \huge <\Title>
-% Great Work That None Can Do Except Me
 
 \vspace{5cm}
 
 \LARGE \Name
-% Gil Dong Hong
 
 \vspace{6cm}
 
@@ -157,7 +162,7 @@
 \thispagestyle{empty}
 \clearpage
 
-\input{texts/0. TODO approvals}
+\input{texts/0-2. Approvals}
 
 % Abstract
 \input{texts/1.Abstract}
@@ -193,7 +198,7 @@
 %%%%%%%%%%    Do not touch the above 20 lines
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\input{texts/0. TODO sections}
+\input{texts/0-3. Sections}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %			Reference
@@ -201,9 +206,8 @@
 \addcontentsline{toc}{section}{References}
 % \bibliographystyle{IEEEtran}
 \bibliographystyle{SIGCHI-Reference-Format}
-\bibliography{references}
+\bibliography{references.bib}
 \clearpage
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%    Do not touch the below
